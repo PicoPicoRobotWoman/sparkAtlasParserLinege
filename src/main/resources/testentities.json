@@ -1,0 +1,84 @@
+[
+  {
+    "entity": {
+      "typeName": "pico_spark_project_type",
+      "attributes": {
+        "qualifiedName": "example_pico_project@pico.hb.com",
+        "name": "Example Pico Spark Project",
+        "description": "This is an example project for the pico_spark_project_type.",
+        "columns": ["column1", "column2", "column3"]
+      }
+    }
+  },
+  {
+    "entity": {
+      "typeName": "pico_spark_filter_type",
+      "attributes": {
+        "qualifiedName": "example_filter@yourdomain.com",
+        "name": "Example Filter",
+        "description": "This is a test filter entity for Spark",
+        "condition": "age > 18 AND salary > 3000"
+      }
+    }
+  },
+  {
+    "entity": {
+      "typeName": "pico_spark_union_type",
+      "attributes": {
+        "qualifiedName": "example_union@yourdomain.com",
+        "name": "Example Union",
+        "description": "A description for the example union",
+        "isAll": true,
+        "byName": false
+      }
+    }
+  },
+  {
+    "entity": {
+      "typeName": "pico_spark_LocalRelation_type",
+      "attributes": {
+        "qualifiedName": "test_local_relation@yourdomain.com",
+        "name": "Test Local Relation",
+        "description": "A description for the test local relation",
+        "columns": ["column1", "column2", "column3"]
+      }
+    }
+  },
+  {
+    "entity": {
+      "typeName": "pico_spark_LogicalRelation_type",
+      "attributes": {
+        "qualifiedName": "test_logical_relation@yourdomain.com",
+        "name": "Test Local Relation",
+        "description": "A description for the test local relation",
+        "columns": ["column1", "column2", "column3"]
+      }
+    }
+  },
+  {
+    "entity": {
+      "typeName": "pico_spark_flow_type",
+      "attributes": {
+        "domain": "test.com",
+        "qualifiedName": "test_spark_flown@yourdomain.com",
+        "name": "Test Local Relation",
+        "description": "A description for the test local spark_flow",
+        "relatedPicoSparkEntities": [
+          {
+            "typeName": "pico_spark_process_type",
+            "uniqueAttributes": {
+              "qualifiedName": "pico_local_relation_6_0@pico.com"
+            }
+          },
+          {
+            "typeName": "ppico_spark_process_type",
+            "uniqueAttributes": {
+              "qualifiedName": "pico_logicalRelation_5_0@pico.com"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+]

@@ -1,0 +1,214 @@
+[
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_data_type",
+        "description": "A type inheriting from assets for Pico DataSet",
+        "superTypes": ["DataSet"],
+        "attributeDefs": [],
+        "relationshipDefs": []
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_process_type",
+        "description": "A type inheriting from assets for Pico Spark abstraction",
+        "superTypes": ["Process"],
+        "attributeDefs": [
+          {
+            "name": "inputs",
+            "description": "List of inputs for the process",
+            "typeName": "array<pico_spark_data_type>",
+            "isOptional": true
+          },
+          {
+            "name": "outputs",
+            "description": "List of outputs for the process",
+            "typeName": "array<pico_spark_data_type>",
+            "isOptional": true
+          }
+        ],
+        "relationshipDefs": []
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_project_type",
+        "description": "pico_spark_project_type",
+        "superTypes": ["pico_spark_process_type"],
+        "attributeDefs": [
+          {
+            "name": "columns",
+            "typeName": "array<string>",
+            "isOptional": true
+          }
+        ]
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_filter_type",
+        "description": "pico_spark_filter_type",
+        "superTypes": ["pico_spark_process_type"],
+        "attributeDefs": [
+          {
+            "name": "condition",
+            "typeName": "string",
+            "isOptional": true
+          }
+        ]
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_union_type",
+        "description": "pico_spark_union_type",
+        "superTypes": ["pico_spark_process_type"],
+        "attributeDefs": [
+          {
+            "name": "isAll",
+            "typeName": "boolean",
+            "isOptional": true
+          },
+          {
+            "name": "byName",
+            "typeName": "boolean",
+            "isOptional": true
+          }
+        ]
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_LocalRelation_type",
+        "description": "pico_spark_LocalRelation_type",
+        "superTypes": ["pico_spark_process_type"],
+        "attributeDefs": [
+          {
+            "name": "columns",
+            "typeName": "array<string>",
+            "isOptional": true
+          }
+        ]
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+      {
+        "name": "pico_spark_LogicalRelation_type",
+        "description": "pico_spark_LogicalRelation_type",
+        "superTypes": ["pico_spark_process_type"],
+        "attributeDefs": [
+          {
+            "name": "columns",
+            "typeName": "array<string>",
+            "isOptional": true
+          }
+        ]
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "superTypes": ["pico_spark_process_type"],
+    "entityDefs": [
+      {
+        "name": "pico_spark_flow_type",
+        "description": "A universal type that can reference any entity",
+        "superTypes": ["pico_spark_process_type"],
+        "attributeDefs": [
+          {
+            "name": "domain",
+            "typeName": "string",
+            "isOptional": true
+          },
+          {
+            "name": "relatedPicoSparkEntities",
+            "typeName": "array<pico_spark_process_type>",
+            "isOptional": true
+          }
+        ]
+      }
+    ],
+    "relationshipDefs": [],
+    "businessMetadataDefs": []
+  },
+  {
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [],
+    "relationshipDefs": [
+      {
+        "name": "pico_x_pico",
+        "typeVersion": "1.0",
+        "relationshipCategory": "AGGREGATION",
+        "relationshipLabel": "__pico_x_pico",
+        "endDef1": {
+          "type": "pico_spark_process_type",
+          "name": "sourceEntity",
+          "isContainer": true,
+          "cardinality": "SET",
+          "isLegacyAttribute": false
+        },
+        "endDef2": {
+          "type": "pico_spark_process_type",
+          "name": "targetEntity",
+          "isContainer": false,
+          "cardinality": "SINGLE",
+          "isLegacyAttribute": false
+        },
+        "propagateTags": "NONE"
+      }
+    ],
+    "businessMetadataDefs": []
+  }
+]
